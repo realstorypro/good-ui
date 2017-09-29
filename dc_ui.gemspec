@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Leonid Medovyy"]
   spec.email         = ["lmedovyy@gmail.com"]
 
-  spec.summary       = %q{UI Component for DC Framework}
+  spec.summary       = %q{UI DSL for DC Framework}
   spec.homepage      = "http://www.radiant9.com"
   spec.license       = "MIT"
 
