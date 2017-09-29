@@ -1,0 +1,80 @@
+defaults:
+  container:
+    tag: div
+    css_class: 'container'
+  grid:
+    tag: div
+    css_class: 'grid'
+  row:
+    tag: div
+    css_class: 'row'
+    ui: :off
+  column:
+    tag: div
+    css_class: 'wide column'
+    ui: :off
+  button:
+    tag: button
+    css_class: 'button'
+  divider:
+    tag: div
+    css_class: 'divider'
+  menu:
+    tag: div
+    css_class: 'menu'
+    ui: :off
+  item:
+    tag: div
+    css_class: 'item'
+    ui: :off
+  header:
+    tag: div
+    css_class: 'header'
+  sub_header:
+    tag: div
+    css_class: 'sub header'
+    ui: :off
+  segments:
+    tag: div
+    css_class: 'segments'
+  segment:
+    tag: div
+    css_class: 'segment'
+  message:
+    tag: div
+    css_class: 'message'
+  items:
+    tag: div
+    css_class: 'items'
+  item:
+    tag: div
+    css_class: 'item'
+    ui: :off
+  image:
+    tag: div
+    css_class: 'image'
+    ui: :off
+  content:
+    tag: div
+    css_class: 'content'
+    ui: :off
+  meta:
+    tag: div
+    css_class: 'meta'
+    ui: :off
+  description:
+    tag: div
+    css_class: 'description'
+    ui: :off
+  extra:
+    tag: div
+    css_class: 'extra'
+    ui: :off
+  icon:
+    tag: i
+    css_class: 'icon'
+    ui: :off
+  dynamic:
+    tag: div
+    css_class: 'dynamic'
+    ui: :off

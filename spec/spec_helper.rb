@@ -1,5 +1,7 @@
-require "bundler/setup"
-require "dc_ui"
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'dc_ui'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -10,5 +12,14 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.expose_dsl_globally = true
+
+  config.before(:each, boot: true) do
+    DcUi.configure do |c|
+      c.ui_file = "#{DcUi.root}/lib/shared/ui.yml"
+    end
+    DcUi.boot
   end
 end
