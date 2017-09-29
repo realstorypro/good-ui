@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # handles loading and serving of the configuration files
 module DcUi
   # contains the configuration itself
