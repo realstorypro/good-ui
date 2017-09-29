@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'hashie'
 
 require 'dc_ui/version'
