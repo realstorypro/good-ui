@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe DcUi::Configuration, 'configuration' do
   after(:each) do
     DcUi.configuration.ui_file = nil
