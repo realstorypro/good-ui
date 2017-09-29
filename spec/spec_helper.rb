@@ -13,4 +13,11 @@ RSpec.configure do |config|
   end
 
   config.expose_dsl_globally = true
+
+  config.before(:each, boot: true) do
+    DcUi.configure do |c|
+      c.ui_file = "#{DcUi.root}/lib/shared/ui.yml"
+    end
+    DcUi.boot
+  end
 end
