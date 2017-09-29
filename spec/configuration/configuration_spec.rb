@@ -1,5 +1,3 @@
-require 'byebug'
-
 describe DcUi::Configuration, 'configuration' do
   it 'should not boot up without implementation file passed' do
     expect { DcUi.boot }.to raise_error(RuntimeError)
