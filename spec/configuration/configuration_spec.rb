@@ -8,7 +8,7 @@ describe DcUi::Configuration, 'configuration' do
   it 'should boot with configuration file passed' do
     expected = expect do
       DcUi.configure do |config|
-        config.ui_file = 'ui'
+        config.ui_file = "#{DcUi.root}/lib/shared/ui.yml"
       end
       DcUi.boot
     end

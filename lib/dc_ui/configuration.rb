@@ -1,4 +1,6 @@
+# handles loading and serving of the configuration files
 module DcUi
+  # contains the configuration itself
   class Configuration
     attr_accessor :ui_file
     def initialize
@@ -16,5 +18,7 @@ module DcUi
 
   def self.boot
     raise 'No ui file provided!' if configuration.ui_file.nil?
+    # Parse the configuration file into Hashie
+    configuration.ui_file = Hashie::Mash.load(configuration.ui_file)
   end
 end
