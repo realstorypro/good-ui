@@ -6,11 +6,39 @@ module DcUi
     include Singleton
 
     def initialize
+      @config = DcUi.configuration.ui_file
+    end
+
+    # Checks if the component exists inside the config file
+    def component_defined?(component)
+      return true if @config.defaults[component]
+      false
+    end
+
+    # Merges default settings from the config file with the settings passed
+    def merge_defaults(component, args=nil)
+      raise "component :: #{component} :: is undefined in the ui.yml" unless component_defined?(component)
+
+      defaults = @config.defaults[component]
+
+      defaults.each do |default|
+        name = default[0].to_sym
+        value = default[1]
+
+        if args.nil? || args.empty?
+          args = {}
+          args[name] = value
+        else
+          args[name] = value unless args.key?(name)
+        end
+      end
+      args
 
     end
 
     # Converts numbers into words
     # It seems to be having issues with larger valeus such as 1001
+    # rubocop:disable all
     def number_in_words(int)
       numbers_to_name = {
           1_000_000 => 'million', 1000 => 'thousand', 100 => 'hundred', 90 => 'ninety', 80 => 'eighty', 70 => 'seventy', 60 => 'sixty', 50 => 'fifty', 40 => 'forty',
@@ -31,6 +59,6 @@ module DcUi
         end
       end
     end
-
+    # rubocop:enable all
   end
 end
