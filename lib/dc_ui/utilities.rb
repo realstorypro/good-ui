@@ -15,9 +15,13 @@ module DcUi
       false
     end
 
-    # Merges default settings from the config file with the settings passed
-    def merge_defaults(component, args=nil)
+    # Merges passed options with defaults defined in the config file
+    def merge_defaults(component, args={})
       raise "component :: #{component} :: is undefined in the ui.yml" unless component_defined?(component)
+
+      # special case where only a single string is passed as an argument
+      # we're treating it as the same as setting a class
+      args = { class: args } if !args.nil? && args.is_a?(String)
 
       defaults = @config.defaults[component]
 

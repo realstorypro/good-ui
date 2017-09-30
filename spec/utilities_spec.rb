@@ -64,4 +64,39 @@ describe DcUi::Utilities, 'component building' do
     expect(component).to include(:tag, :css_class)
   end
 
+  it 'returns correct tag if no arguments are passed' do
+    component = @utils.merge_defaults('grid')
+    expect(component[:tag]).to eql('div')
+  end
+
+  it 'returns correct css_class if no arguments are passed' do
+    component = @utils.merge_defaults('grid')
+    expect(component[:css_class]).to eql('grid')
+  end
+
+  it 'allows for the tag to be overwritten' do
+    component = @utils.merge_defaults('grid', tag: 'h4')
+    expect(component[:tag]).to eql('h4')
+  end
+
+  it 'allows for the css_class to be overwritten' do
+    component = @utils.merge_defaults('grid', css_class: 'non grid')
+    expect(component[:css_class]).to eql('non grid')
+  end
+
+  it 'picks up additional boolean options' do
+    component = @utils.merge_defaults('grid', vue: true)
+    expect(component[:vue]).to be(true)
+  end
+
+  it 'picks up additional string options' do
+    component = @utils.merge_defaults('grid', arbitrary: 'asd')
+    expect(component[:arbitrary]).to eql('asd')
+  end
+
+  it 'can receive a single string option and convert it into a class argument' do
+    component = @utils.merge_defaults('grid', 'single class')
+    expect(component[:class]).to eql('single class')
+  end
+
 end
