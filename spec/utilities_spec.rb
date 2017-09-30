@@ -13,8 +13,21 @@ describe DcUi::Utilities do
     expect(DcUi::Utilities).to respond_to(:instance)
   end
 
-  it 'converts numbers into words' do
+  it 'converts small even integers into words' do
     expect(@utils.number_in_words(2)).to eq('two')
   end
+
+  it 'converts small odd integers into words' do
+    expect(@utils.number_in_words(15)).to eq('fifteen')
+  end
+
+  it 'converts large(ish) odd integers into words' do
+    expect(@utils.number_in_words(51)).to eq('fifty one')
+  end
+
+  it 'retruns an empty string if the number is zero' do
+    expect(@utils.number_in_words(0)).to eq('')
+  end
+
 
 end
