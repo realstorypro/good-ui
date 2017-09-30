@@ -4,6 +4,7 @@ require 'hashie'
 
 require 'dc_ui/version'
 require 'dc_ui/configuration'
+require 'dc_ui/component'
 
 module DcUi
   def self.root

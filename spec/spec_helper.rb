@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'dc_ui'
+require 'byebug'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -16,10 +17,16 @@ RSpec.configure do |config|
 
   config.expose_dsl_globally = true
 
-  config.before(:each, boot: true) do
-    DcUi.configure do |c|
-      c.ui_file = "#{DcUi.root}/lib/shared/ui.yml"
+  config.before(:each) do |test|
+    unless test.metadata[:skip_boot]
+      DcUi.configure do |c|
+        c.ui_file = "#{DcUi.root}/lib/shared/ui.yml"
+      end
+      DcUi.boot
     end
-    DcUi.boot
+  end
+
+  config.after(:each) do |test|
+    DcUi.configuration.ui_file = nil unless test.metadata[:skip_shutdown]
   end
 end
