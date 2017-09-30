@@ -13,4 +13,8 @@ describe DcUi::Utilities do
     expect(DcUi::Utilities).to respond_to(:instance)
   end
 
+  it 'converts numbers into words' do
+    expect(@utils.number_in_words(2)).to eq('two')
+  end
+
 end
