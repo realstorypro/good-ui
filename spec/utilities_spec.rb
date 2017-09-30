@@ -30,7 +30,6 @@ describe DcUi::Utilities, 'number to text conversion' do
   it 'retruns an empty string if the number is zero' do
     expect(@utils.number_in_words(0)).to eq('')
   end
-
 end
 
 describe DcUi::Utilities, 'component building' do
@@ -48,6 +47,17 @@ describe DcUi::Utilities, 'component building' do
 
   it 'returns `false` if the component doesnt within the config file' do
     expect(@utils.component_defined?(:undefined_component)).to be(false)
+  end
+end
+
+# rubocop:disable Metrics/BlockLength
+describe DcUi::Utilities, 'merges settings' do
+  before(:each) do
+    @utils = DcUi::Utilities.instance
+  end
+
+  after(:each) do
+    @utils = nil
   end
 
   it 'raises an error when trying to merge settings for a non existing component' do
@@ -98,5 +108,5 @@ describe DcUi::Utilities, 'component building' do
     component = @utils.merge_defaults('grid', 'single class')
     expect(component[:class]).to eql('single class')
   end
-
+  # rubocop:enable Metrics/BlockLength
 end

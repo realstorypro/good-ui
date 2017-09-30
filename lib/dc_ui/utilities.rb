@@ -16,8 +16,8 @@ module DcUi
     end
 
     # Merges passed options with defaults defined in the config file
-    def merge_defaults(component, args={})
-      raise "component :: #{component} :: is undefined in the ui.yml" unless component_defined?(component)
+    def merge_defaults(component, args = {})
+      component_missing?(component)
 
       # special case where only a single string is passed as an argument
       # we're treating it as the same as setting a class
@@ -26,18 +26,14 @@ module DcUi
       defaults = @config.defaults[component]
 
       defaults.each do |default|
-        name = default[0].to_sym
-        value = default[1]
+        name = default_name(default)
+        value = default_value(default)
 
-        if args.nil? || args.empty?
-          args = {}
-          args[name] = value
-        else
-          args[name] = value unless args.key?(name)
-        end
+        # use the default value unless overwritten via arguments
+        args[name] = value unless args.key?(name)
       end
-      args
 
+      args
     end
 
     # Converts numbers into words
@@ -64,5 +60,23 @@ module DcUi
       end
     end
     # rubocop:enable all
+
+    private
+
+    # raises component missing error
+    def component_missing?(component)
+      error = "component :: #{component} :: is undefined in the ui.yml"
+      raise error unless component_defined?(component)
+    end
+
+    # retreives the default name from a hash
+    def default_name(default)
+      default[0].to_sym
+    end
+
+    # retreives the default value from a hash
+    def default_value(default)
+      default[1]
+    end
   end
 end
