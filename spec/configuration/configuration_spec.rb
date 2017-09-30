@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'byebug'
 describe DcUi::Configuration, 'configuration' do
   it 'should not boot up without implementation file passed', skip_boot: true do
     expect { DcUi.boot }.to raise_error(RuntimeError)

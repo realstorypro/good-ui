@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 require 'hashie'
+require 'singleton'
 
 require 'dc_ui/version'
 require 'dc_ui/configuration'
+require 'dc_ui/utilities'
 require 'dc_ui/component'
 
 module DcUi
