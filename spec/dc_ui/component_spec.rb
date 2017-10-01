@@ -84,4 +84,50 @@ describe DcUi::Component, 'component abilities' do
     expect(component.data[:name]).to include('sidebar_name')
   end
 
+  it 'allows for vue to be enabled' do
+    settings = @utils.merge_defaults('column', vue: :on)
+    component = DcUi::Component.new(settings)
+    expect(component.data[:vue]).to be(true)
+  end
+
+  it 'allows for style to be passed' do
+    settings = @utils.merge_defaults('column', style: 'font-weight: bold;')
+    component = DcUi::Component.new(settings)
+    expect(component.style).to include('font-weight: bold;')
+  end
+
+  it 'allows for id to be set' do
+    settings = @utils.merge_defaults('column', id: 'woot')
+    component = DcUi::Component.new(settings)
+    expect(component.id).to include('woot')
+  end
+
+  it 'sets a default tag' do
+    expect(@component.tag).to include('div')
+  end
+
+  it 'allows for tag to be set' do
+    settings = @utils.merge_defaults('column', tag: 'h1')
+    component = DcUi::Component.new(settings)
+    expect(component.tag).to include('h1')
+  end
+
+  it 'allows for url to be set' do
+    settings = @utils.merge_defaults('column', url: 'http://www.google.com')
+    component = DcUi::Component.new(settings)
+    expect(component.url).to include('http://www.google.com')
+  end
+
+  it 'allows for image to be set' do
+    settings = @utils.merge_defaults('column', img: 'test.gif')
+    component = DcUi::Component.new(settings)
+    expect(component.img).to include('test.gif')
+  end
+
+  it 'allows for text to be set' do
+    settings = @utils.merge_defaults('column', text: 'hey bud!')
+    component = DcUi::Component.new(settings)
+    expect(component.text).to include('hey bud!')
+  end
+
 end

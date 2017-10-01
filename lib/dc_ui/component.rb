@@ -17,13 +17,23 @@ module DcUi
     end
 
     def build
+      # functions that affect the component class
       build_ui
       build_dynamic
       build_class
       build_responsiveness
       build_name
-      build_data
       build_default_class
+
+      # builds out other parts of the component
+      build_vue
+      build_data
+      build_style
+      build_id
+      build_tag
+      build_url
+      build_img
+      build_text
     end
 
     # builds out the ui class for the component
@@ -39,11 +49,6 @@ module DcUi
     # builds out css class for the component
     def build_class
       add_class @settings[:class] if @settings.key?(:class)
-    end
-
-    # builds out a default class for the component
-    def build_default_class
-      add_class @settings[:css_class] if @settings.key?(:css_class)
     end
 
     # builds out the reponsive css classes
@@ -63,10 +68,51 @@ module DcUi
       end
     end
 
+    # builds out a default class for the component
+    def build_default_class
+      add_class @settings[:css_class] if @settings.key?(:css_class)
+    end
+
+    # enalbes vue in the data array
+    def build_vue
+      add_data :vue, true if on?(:vue)
+    end
+
     # builds data for the component
     def build_data
       @data = @settings[:data]
     end
+
+    # builds style for the component
+    def build_style
+      @style = @settings[:style]
+    end
+
+    # builds id for the component
+    def build_id
+      @id = @settings[:id] if @settings.key?(:id)
+    end
+
+    # builds tag for the component
+    def build_tag
+      @tag = @settings[:tag]
+    end
+
+    # builds url for the component
+    def build_url
+      @url = @settings[:url]
+    end
+
+    # builds img for the component
+    def build_img
+      @img = @settings[:img]
+    end
+
+    # builds text for the component
+    def build_text
+      @text = @settings[:text]
+    end
+
 
     private
 
