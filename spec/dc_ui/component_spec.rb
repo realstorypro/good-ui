@@ -78,10 +78,10 @@ describe DcUi::Component, 'component abilities' do
   end
 
   it 'accepts name and generates class & data' do
-    settings = @utils.merge_defaults('column', name: 'sidebar')
+    settings = @utils.merge_defaults('column', name: 'sidebar name')
     component = DcUi::Component.new(settings)
     expect(component.css_class).to include('sidebar')
-    expect(component.data.name).to include('sidebar')
+    expect(component.data[:name]).to include('sidebar_name')
   end
 
 end
