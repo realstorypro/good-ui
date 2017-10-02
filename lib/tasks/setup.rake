@@ -8,7 +8,7 @@ end
 
 def dcui_copy(file, to, message)
   puts message
-  source = "#{File.join(File.dirname(__FILE__), "../shared/#{file}")}"
+  source = File.join File.dirname(__FILE__), "../shared/#{file}"
   destination = Rails.root.join(to).to_s
-  FileUtils.cp_r source, destination
+  FileUtils.cp_r source.to_s, destination
 end
