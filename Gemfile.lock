@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dc_ui (0.1.0)
+    dc_ui (2.5.0)
       hashie
       rails (~> 5.1.4)
 
