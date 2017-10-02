@@ -1,80 +1,157 @@
 defaults:
+  # typography
+  h1:
+    tag: h1
+    css_class: header huge
+
+  h2:
+    tag: h2
+    css_class: header large
+
+  h3:
+    tag: h3
+    css_class: header medium
+
+  h4:
+    tag: h4
+    css_class: header small
+
+  h5:
+    tag: h4
+    css_class: header tiny
+
+  text:
+    tag: p
+    css_class: text
+    ui: :off
+
+  # semantic ui components
   container:
     tag: div
-    css_class: 'container'
+    css_class: container
+
   grid:
     tag: div
-    css_class: 'grid'
+    css_class: grid
+
   row:
     tag: div
-    css_class: 'row'
+    css_class: row
     ui: :off
+
   column:
     tag: div
-    css_class: 'wide column'
+    css_class: wide column
     ui: :off
-  button:
-    tag: button
-    css_class: 'button'
-  divider:
-    tag: div
-    css_class: 'divider'
-  menu:
-    tag: div
-    css_class: 'menu'
-    ui: :off
-  item:
-    tag: div
-    css_class: 'item'
-    ui: :off
+
   header:
     tag: div
-    css_class: 'header'
-  sub_header:
-    tag: div
-    css_class: 'sub header'
-    ui: :off
-  segments:
-    tag: div
-    css_class: 'segments'
-  segment:
-    tag: div
-    css_class: 'segment'
-  message:
-    tag: div
-    css_class: 'message'
-  items:
-    tag: div
-    css_class: 'items'
-  item:
-    tag: div
-    css_class: 'item'
-    ui: :off
-  image:
-    tag: div
-    css_class: 'image'
-    ui: :off
-  content:
-    tag: div
-    css_class: 'content'
-    ui: :off
-  meta:
-    tag: div
-    css_class: 'meta'
-    ui: :off
-  description:
-    tag: div
-    css_class: 'description'
-    ui: :off
-  extra:
-    tag: div
-    css_class: 'extra'
-    ui: :off
+    css_class: header
+
   icon:
     tag: i
-    css_class: 'icon'
+    css_class: icon
     ui: :off
-  dynamic:
+
+  table:
+    tag: table
+    css_class: table
+
+  divider:
     tag: div
-    css_class: 'dynamic'
+    css_class: divider
+
+  button:
+    tag: button
+    css_class: button
+
+  buttons:
+    tag: div
+    css_class: buttons
+
+  dropdown:
+    tag: div
+    css_class: dropdown
+
+  menu:
+    tag: div
+    css_class: menu
+    ui: :off
+
+  list:
+    tag: div
+    css_class: list
+
+  message:
+    tag: div
+    css_class: message
+
+  checkbox:
+    tag: div
+    css_class: checkbox
+
+  image:
+    tag: div
+    css_class: image
+
+  meta:
+    tag: div
+    css_class: meta
+    ui: :off
+
+  content:
+    tag: div
+    css_class: content
+    ui: :off
+
+  description:
+    tag: div
+    css_class: description
+    ui: :off
+
+  extra:
+    tag: div
+    css_class: extra
+    ui: :off
+
+  segments:
+    tag: div
+    css_class: segments
+
+  segment:
+    tag: div
+    css_class: segment
+
+  items:
+    tag: div
+    css_class: items
+
+  item:
+    tag: div
+    css_class: item
+    ui: :off
+
+  cards:
+    tag: div
+    css_class: cards
+
+  card:
+    tag: div
+    css_class: card
+
+  # DC specific Components
+
+  component:
+    tag: div
+    css_class: component
+    ui: :off
+
+  fragment:
+    tag: div
+    css_class: fragment
+    ui: :off
+
+  widget:
+    tag: div
+    css_class: widget
     ui: :off
