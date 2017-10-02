@@ -40,6 +40,7 @@ describe DcUi::Component, 'default component abilities' do
   end
 end
 
+# rubocop:disable BlockLength
 describe DcUi::Component, 'custom default component abilities' do
   before(:each) do
     @utils = DcUi::Utilities.instance
@@ -135,3 +136,4 @@ describe DcUi::Component, 'custom default component abilities' do
     expect(component.text).to include('hey bud!')
   end
 end
+# rubocop:enable BlockLength
