@@ -13,7 +13,7 @@ module DcUi
 
     railtie_name :dc_ui
     rake_tasks do
-      load 'tasks/copy.rake'
+      load 'tasks/setup.rake'
     end
   end
 end
