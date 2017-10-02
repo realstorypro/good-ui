@@ -7,7 +7,7 @@ describe DcUi::Component, 'component creation' do
   end
 end
 
-describe DcUi::Component, 'component abilities' do
+describe DcUi::Component, 'default component abilities' do
   before(:each) do
     @utils = DcUi::Utilities.instance
     @settings = @utils.merge_defaults('grid', class: 'round', text: 'test')
@@ -35,6 +35,15 @@ describe DcUi::Component, 'component abilities' do
     expect(@component.css_class).to include('round')
   end
 
+  it 'sets a default tag' do
+    expect(@component.tag).to include('div')
+  end
+end
+
+describe DcUi::Component, 'custom default component abilities' do
+  before(:each) do
+    @utils = DcUi::Utilities.instance
+  end
   it 'allows for a ui key to be turned off' do
     settings = @utils.merge_defaults('grid', class: 'round', ui: :off)
     component = DcUi::Component.new(settings)
@@ -102,10 +111,6 @@ describe DcUi::Component, 'component abilities' do
     expect(component.id).to include('woot')
   end
 
-  it 'sets a default tag' do
-    expect(@component.tag).to include('div')
-  end
-
   it 'allows for tag to be set' do
     settings = @utils.merge_defaults('column', tag: 'h1')
     component = DcUi::Component.new(settings)
@@ -129,5 +134,4 @@ describe DcUi::Component, 'component abilities' do
     component = DcUi::Component.new(settings)
     expect(component.text).to include('hey bud!')
   end
-
 end

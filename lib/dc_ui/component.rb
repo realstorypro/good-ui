@@ -6,6 +6,13 @@ module DcUi
     def initialize(settings)
       @utils = Utilities.instance
       @settings = settings
+      set_defaults
+      build_component
+      transpose_settings %w[data style id tag url img text]
+    end
+
+    # sets component defaults
+    def set_defaults
       @id = nil
       @url = nil
       @img = nil
@@ -13,27 +20,17 @@ module DcUi
       @data = nil
       @style = nil
       @css_class = ''
-      build
     end
 
-    def build
-      # functions that affect the component class
+    # builds out the component
+    def build_component
       build_ui
       build_dynamic
       build_class
       build_responsiveness
       build_name
       build_default_class
-
-      # builds out other parts of the component
       build_vue
-      build_data
-      build_style
-      build_id
-      build_tag
-      build_url
-      build_img
-      build_text
     end
 
     # builds out the ui class for the component
@@ -55,17 +52,18 @@ module DcUi
     def build_responsiveness
       add_class build_only if @settings.key?(:only)
       add_class build_size if @settings.key?(:size)
-      add_class build_size(:computer) if @settings.key?(:computer)
-      add_class build_size(:tablet) if @settings.key?(:tablet)
-      add_class build_size(:mobile) if @settings.key?(:mobile)
+
+      sizes = %i[computer tablet mobile]
+      sizes.each do |device|
+        add_class build_size(device) if @settings.key?(device)
+      end
     end
 
     # builds out the name for the compnent
     def build_name
-      if @settings.key?(:name)
-        add_class @settings[:name]
-        add_data :name, @settings[:name].parameterize.underscore
-      end
+      return unless @settings.key?(:name)
+      add_class @settings[:name]
+      add_data :name, @settings[:name].parameterize.underscore
     end
 
     # builds out a default class for the component
@@ -78,43 +76,13 @@ module DcUi
       add_data :vue, true if on?(:vue)
     end
 
-    # builds data for the component
-    def build_data
-      @data = @settings[:data]
-    end
-
-    # builds style for the component
-    def build_style
-      @style = @settings[:style]
-    end
-
-    # builds id for the component
-    def build_id
-      @id = @settings[:id] if @settings.key?(:id)
-    end
-
-    # builds tag for the component
-    def build_tag
-      @tag = @settings[:tag]
-    end
-
-    # builds url for the component
-    def build_url
-      @url = @settings[:url]
-    end
-
-    # builds img for the component
-    def build_img
-      @img = @settings[:img]
-    end
-
-    # builds text for the component
-    def build_text
-      @text = @settings[:text]
-    end
-
-
     private
+
+    def transpose_settings(items)
+      items.each do |item|
+        instance_variable_set("@#{item}", @settings[item.to_sym])
+      end
+    end
 
     # appends class to the css_clss object
     def add_class(klass)
@@ -141,6 +109,9 @@ module DcUi
     end
 
     # checks if the key is off
+    # todo: extract into a gem
+    # - use syntax like @settings[key].on?
+    # - make sure the [method]? is metaprogrammed on method_missing to map to the key
     def off?(key)
       return true if @settings[key].equal? :off
       false
@@ -151,6 +122,5 @@ module DcUi
       return true if @settings[key].equal? :on
       false
     end
-
   end
 end
