@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :dc_ui do
   desc 'Copies ui.yml & initializer to application'
   task :setup do
