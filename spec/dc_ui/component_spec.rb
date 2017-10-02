@@ -45,6 +45,13 @@ describe DcUi::Component, 'custom default component abilities' do
   before(:each) do
     @utils = DcUi::Utilities.instance
   end
+
+  it 'allows for function call without arguments' do
+    settings = @utils.merge_defaults('grid')
+    component = DcUi::Component.new(settings)
+    expect(component.css_class).to include('ui grid')
+  end
+
   it 'allows for a ui key to be turned off' do
     settings = @utils.merge_defaults('grid', class: 'round', ui: :off)
     component = DcUi::Component.new(settings)

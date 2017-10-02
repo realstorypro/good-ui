@@ -8,6 +8,7 @@ require 'dc_ui/configuration'
 require 'dc_ui/utilities'
 require 'dc_ui/component'
 
+require 'dc_ui/helpers'
 require 'dc_ui/railtie'
 
 module DcUi

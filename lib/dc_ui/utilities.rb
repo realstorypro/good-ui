@@ -16,20 +16,15 @@ module DcUi
     end
 
     # Merges passed options with defaults defined in the config file
-    def merge_defaults(component, args = {})
+    def merge_defaults(component, args = nil)
       component_missing?(component)
-
-      # special case where only a single string is passed as an argument
-      # we're treating it as the same as setting a class
-      args = { class: args } if !args.nil? && args.is_a?(String)
+      args = prepare_args(args)
 
       defaults = @config.defaults[component]
 
       defaults.each do |default|
         name = default_name(default)
         value = default_value(default)
-
-        # use the default value unless overwritten via arguments
         args[name] = value unless args.key?(name)
       end
 
@@ -62,6 +57,15 @@ module DcUi
     # rubocop:enable all
 
     private
+
+    # parses arguments
+    def prepare_args(args)
+      # special case where only a single string is passed as an argument
+      # we're treating it as the same as setting a class
+      args = { class: args } if !args.nil? && args.is_a?(String)
+      args = {} if args.nil? || args.empty?
+      args
+    end
 
     # raises component missing error
     def component_missing?(component)
