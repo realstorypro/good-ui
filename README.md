@@ -1,7 +1,6 @@
 # DC-UI
-[ ![Codeship Status for radiant9/dc-ui](https://app.codeship.com/projects/3a47e490-8794-0135-3a84-7eb6ba30fb88/status?branch=master)](https://app.codeship.com/projects/248380)
-[![codecov](https://codecov.io/gh/radiant9/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/radiant9/dc-ui)
-[![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/leouofa/radiant9)
+[ ![Codeship Status for leonid-io/dc-ui](https://app.codeship.com/projects/3a47e490-8794-0135-3a84-7eb6ba30fb88/status?branch=master)](https://app.codeship.com/projects/248380)
+[![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
 
 DC-UI is designed to make it easy to create custom ruby functions to render markup elements.
 
