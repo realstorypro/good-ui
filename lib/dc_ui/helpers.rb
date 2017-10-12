@@ -5,7 +5,7 @@ module DcUi
     def ui(name, args = {}, &block)
       settings = DcUi::Utilities.instance.merge_defaults(name, args)
       component = DcUi::Component.new(settings)
-      render_component(component, &block)
+      render_component(component, &block).html_safe
     end
 
     # rubocop:disable MethodLength

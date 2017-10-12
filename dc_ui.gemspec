@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'dc_ui'
   spec.version       = DcUi::VERSION
   spec.authors       = ['Leonid Medovyy']
-  spec.email         = ['lmedovyy@gmail.com']
+  spec.email         = ['support@leonid.io']
 
   spec.summary       = 'UI DSL for DC Framework'
-  spec.homepage      = 'http://www.radiant9.com'
+  spec.homepage      = 'http://www.leonid.io/'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
