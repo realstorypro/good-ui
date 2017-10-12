@@ -52,7 +52,7 @@ module DcUi
     def build_link_component(c, &block)
       link_to c.url, class: c.css_class, id: c.id, data: c.data, style: c.style do
         if c.text.nil?
-          capture(&block) if block_given?
+          raw(capture(&block)) if block_given?
         else
           c.text
         end
@@ -62,7 +62,7 @@ module DcUi
     def build_tag_component(c, &block)
       content_tag c.tag, class: c.css_class, id: c.id, data: c.data, style: c.style do
         if c.text.nil?
-          capture(&block) if block_given?
+          raw(capture(&block)) if block_given?
         else
           c.text
         end
