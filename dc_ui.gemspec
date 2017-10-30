@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'dc_ui'
   spec.version       = DcUi::VERSION
   spec.authors       = ['Leonid Medovyy']
-  spec.email         = ['lmedovyy@gmail.com']
+  spec.email         = ['support@leonid.io']
 
   spec.summary       = 'UI DSL for DC Framework'
-  spec.homepage      = 'http://www.radiant9.com'
+  spec.homepage      = 'http://www.leonid.io/'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rails', '~> 5.1.4'
+  spec.add_dependency 'rails', '~> 5.1.0'
   spec.add_dependency 'hashie'
 
   spec.add_development_dependency 'bundler', '~> 1.16.a'
