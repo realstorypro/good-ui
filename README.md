@@ -164,7 +164,7 @@ will produce
 ```
 
 ## Contributing
-Made and maintained by [Radiant9](http://www.radiant9.com)
+Made and maintained by [Leonid Medovyy](http://www.leonid.io)
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
