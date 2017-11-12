@@ -2,17 +2,17 @@
 [ ![Codeship Status for leonid-io/dc-ui](https://app.codeship.com/projects/3a47e490-8794-0135-3a84-7eb6ba30fb88/status?branch=master)](https://app.codeship.com/projects/248380)
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
 
-DC-UI is designed to make it easy to create custom ruby functions to render markup elements.
+DC-UI makes it easy to build a custom front-end dsl for you.
 
 It is loosly coupled with [Semantic UI](http://www.semantic-ui.com) and 
 adds some framework specific options to make front-end development a little easier.
 
 ## Benefits
 
-- Sexy front end Code
-- Faster Front End Development
-- Easier UI Upgrades
-- Perfect Companion for OOCSS
+- Better front end design
+- Cleaner markup
+- Faster front end Development
+- Easier UI Upgrades (debatable)
 
 ## Installation
 
