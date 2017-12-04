@@ -80,13 +80,11 @@ module DcUi
 
     # builds vue properties
     def build_vue_props
-      if @settings.key?(:v)
-        @settings[:v].each do |vue_prop|
-          vue_props << { "v-#{vue_prop[0]}":  vue_prop[1] }
-        end
+      return unless @settings.key?(:v)
+      @settings[:v].each do |vue_prop|
+        vue_props << { "v-#{vue_prop[0]}" => vue_prop[1] }
       end
     end
-
 
     private
 

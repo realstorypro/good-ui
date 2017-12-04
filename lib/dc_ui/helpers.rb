@@ -74,17 +74,16 @@ module DcUi
     end
 
     def build_arguments(c)
-      arguments = { }
+      arguments = {}
       arguments[:class] = c.css_class
       arguments[:id] = c.id
       arguments[:data] = c.data
       arguments[:style] = c.style
-      unless c.vue_props.empty?
-        c.vue_props.each do |prop|
-          arguments[prop.keys.first] = prop.values.first
-        end
-      end
+      return arguments if c.vue_props.empty?
 
+      c.vue_props.each do |prop|
+        arguments[prop.keys.first] = prop.values.first
+      end
       arguments
     end
   end
