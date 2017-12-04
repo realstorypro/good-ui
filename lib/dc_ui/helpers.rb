@@ -46,11 +46,13 @@ module DcUi
     end
 
     def build_image_component(c)
-      image_tag c.img, class: c.css_class, id: c.id, data: c.data, style: c.style
+      arguments = build_arguments(c)
+      image_tag c.img, arguments
     end
 
     def build_link_component(c, &block)
-      link_to c.url, class: c.css_class, id: c.id, data: c.data, style: c.style do
+      arguments = build_arguments(c)
+      link_to c.url, arguments do
         if c.text.nil?
           raw(capture(&block)) if block_given?
         else
@@ -60,13 +62,30 @@ module DcUi
     end
 
     def build_tag_component(c, &block)
-      content_tag c.tag, class: c.css_class, id: c.id, data: c.data, style: c.style do
+      arguments = build_arguments(c)
+
+      content_tag c.tag, arguments do
         if c.text.nil?
           raw(capture(&block)) if block_given?
         else
           c.text
         end
       end
+    end
+
+    def build_arguments(c)
+      arguments = { }
+      arguments[:class] = c.css_class
+      arguments[:id] = c.id
+      arguments[:data] = c.data
+      arguments[:style] = c.style
+      unless c.vue_props.empty?
+        c.vue_props.each do |prop|
+          arguments[prop.keys.first] = prop.values.first
+        end
+      end
+
+      arguments
     end
   end
 end
