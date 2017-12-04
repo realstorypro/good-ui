@@ -1,7 +1,7 @@
 module DcUi
   # responsible for the out building of the component
   class Component
-    attr_accessor :tag, :css_class, :id, :url, :img, :text, :data, :style
+    attr_accessor :tag, :css_class, :id, :url, :img, :text, :data, :style, :vue_props
 
     def initialize(settings)
       @utils = Utilities.instance
@@ -19,6 +19,7 @@ module DcUi
       @text = nil
       @data = nil
       @style = nil
+      @vue_props = []
       @css_class = ''
     end
 
@@ -31,6 +32,7 @@ module DcUi
       build_name
       build_default_class
       build_vue
+      build_vue_props
     end
 
     # builds out the ui class for the component
@@ -74,6 +76,14 @@ module DcUi
     # enalbes vue in the data array
     def build_vue
       add_data :vue, true if on?(:vue)
+    end
+
+    # builds vue properties
+    def build_vue_props
+      return unless @settings.key?(:v)
+      @settings[:v].each do |vue_prop|
+        vue_props << { "v-#{vue_prop[0]}" => vue_prop[1] }
+      end
     end
 
     private
