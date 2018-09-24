@@ -3,16 +3,16 @@
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
 
 
-Conquer complex UIs with beastUI.
+Conquer complex UIs with beastUI. 
 
 ## Benefits
-- Massive reduction in cognitive load
-- Easily build custom DSL for your front-end
-- Consistent markup
-- Better front end design
-- Cleaner markup
+- Rapidly build complex UIs.
+- Massive reduction in Cognitive Load
+- Cleaner(ish) Markup
+- Build a deisgn vocabulary
 - Faster front end Development
-- Rapid UI iteration
+- Rapid UI iterations
+
 
 ## Installation
 
@@ -163,8 +163,9 @@ will produce
 <div class="segment hero"><h1>Hello World</h1></div>
 ```
 
-## Contributing
-Made and maintained by [Leonid Medovyy](http://www.leonid.io)
+## Contributors
+- [Leonid Medovyy]()
+
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
