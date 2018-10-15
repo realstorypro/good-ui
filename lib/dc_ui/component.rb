@@ -33,8 +33,7 @@ module DcUi
       build_default_class
       build_vue
       build_vue_props
-      build_stimulus_controller
-      build_stimulus_target
+      build_stimulus_props
     end
 
     # builds out the ui class for the component
@@ -89,14 +88,10 @@ module DcUi
     end
 
     # builds out stimulus.js shortcuts
-    def build_stimulus_controller
-      return unless @settings.key?(:controller)
-      add_data :controller, @settings[:controller]
-    end
-
-    def build_stimulus_target
-      return unless @settings.key?(:target)
-      add_data :target, @settings[:target]
+    def build_stimulus_props
+      add_data :controller, @settings[:controller] if @settings.key?(:controller)
+      add_data :target, @settings[:target] if @settings.key?(:target)
+      add_data :action, @settings[:action] if @settings.key?(:action)
     end
 
     private
