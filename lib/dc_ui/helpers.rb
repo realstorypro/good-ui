@@ -1,13 +1,6 @@
 module DcUi
   # helper module that gets included into a gem
   module Helpers
-    # ui factory
-    def ui(name, args = {}, &block)
-      settings = DcUi::Utilities.instance.merge_defaults(name, args)
-      component = DcUi::Component.new(settings)
-      render_component(component, &block)
-    end
-
     # rubocop:disable MethodLength
     def method_missing(m, *args, &block)
       if DcUi::Utilities.instance.component_defined?(m)
@@ -31,57 +24,68 @@ module DcUi
 
     private
 
+    # ui factory
+    def ui(name, args = {}, &block)
+      settings = DcUi::Utilities.instance.merge_defaults(name, args)
+      component = DcUi::Component.new(settings)
+      render_component(component, &block)
+    end
+
     def render_component(component, &block)
       # throw an error if the url & img are both passed in
       error_msg = 'Can not pass `img` and `url` at the same time. You must choose ...'
       raise ArgumentError, error_msg if component.url && component.img
 
       if component.img
-        build_image_component(component)
+        render_image_component(component)
       elsif component.url
-        build_link_component(component, &block)
+        render_link_component(component, &block)
       else
-        build_tag_component(component, &block)
+        render_tag_component(component, &block)
       end
     end
 
-    def build_image_component(c)
-      arguments = build_arguments(c)
-      image_tag c.img, arguments
+    # renders the image component
+    def render_image_component(component)
+      arguments = build_arguments(component)
+      image_tag component.img, arguments
     end
 
-    def build_link_component(c, &block)
-      arguments = build_arguments(c)
-      link_to c.url, arguments do
-        if c.text.nil?
+    # renders the link component
+    def render_link_component(component, &block)
+      arguments = build_arguments(component)
+      link_to component.url, arguments do
+        if component.text.nil?
           raw(capture(&block)) if block_given?
         else
-          c.text
+          component.text
         end
       end
     end
 
-    def build_tag_component(c, &block)
-      arguments = build_arguments(c)
+    # renders the tag component
+    def render_tag_component(component, &block)
+      arguments = build_arguments(component)
 
-      content_tag c.tag, arguments do
-        if c.text.nil?
+      content_tag component.tag, arguments do
+        if component.text.nil?
           raw(capture(&block)) if block_given?
         else
-          c.text
+          component.text
         end
       end
     end
 
-    def build_arguments(c)
+    # constructs the arguments from a component
+    def build_arguments(component)
       arguments = {}
-      arguments[:class] = c.css_class
-      arguments[:id] = c.id
-      arguments[:data] = c.data
-      arguments[:style] = c.style
-      return arguments if c.vue_props.empty?
+      arguments[:class] = component.css_class
+      arguments[:id] = component.id
+      arguments[:data] = component.data
+      arguments[:style] = component.style
+      return arguments if component.vue_props.empty?
 
-      c.vue_props.each do |prop|
+      component.vue_props.each do |prop|
         arguments[prop.keys.first] = prop.values.first
       end
       arguments

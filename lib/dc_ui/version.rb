@@ -1,3 +1,3 @@
 module DcUi
-  VERSION = '2.5.5'.freeze
+  VERSION = '3.0.0'.freeze
 end
