@@ -33,6 +33,7 @@ module DcUi
       build_default_class
       build_vue
       build_vue_props
+      build_stimulus_props
     end
 
     # builds out the ui class for the component
@@ -73,7 +74,7 @@ module DcUi
       add_class @settings[:css_class] if @settings.key?(:css_class)
     end
 
-    # enalbes vue in the data array
+    # enables vue in the data array
     def build_vue
       add_data :vue, true if on?(:vue)
     end
@@ -84,6 +85,13 @@ module DcUi
       @settings[:v].each do |vue_prop|
         vue_props << { "v-#{vue_prop[0]}" => vue_prop[1] }
       end
+    end
+
+    # builds out stimulus.js shortcuts
+    def build_stimulus_props
+      add_data :controller, @settings[:controller] if @settings.key?(:controller)
+      add_data :target, @settings[:target] if @settings.key?(:target)
+      add_data :action, @settings[:action] if @settings.key?(:action)
     end
 
     private
