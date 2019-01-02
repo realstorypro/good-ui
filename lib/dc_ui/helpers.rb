@@ -83,6 +83,7 @@ module DcUi
       arguments[:id] = component.id
       arguments[:data] = component.data
       arguments[:style] = component.style
+      arguments[:alt] = component.alt
       return arguments if component.vue_props.empty?
 
       component.vue_props.each do |prop|
