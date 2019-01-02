@@ -131,6 +131,18 @@ describe DcUi::Component, 'custom default component abilities' do
     expect(component.url).to include('http://www.google.com')
   end
 
+  it 'allows for alt to be set' do
+    settings = @utils.merge_defaults('column', alt: 'column2')
+    component = DcUi::Component.new(settings)
+    expect(component.alt).to include('column2')
+  end
+
+  it 'allows for title to be set' do
+    settings = @utils.merge_defaults('column', title: 'title2')
+    component = DcUi::Component.new(settings)
+    expect(component.title).to include('title2')
+  end
+
   it 'allows for image to be set' do
     settings = @utils.merge_defaults('column', img: 'test.gif')
     component = DcUi::Component.new(settings)
