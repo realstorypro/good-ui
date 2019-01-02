@@ -1,14 +1,14 @@
 module DcUi
   # responsible for the out building of the component
   class Component
-    attr_accessor :tag, :css_class, :id, :url, :alt, :img, :text, :data, :style, :vue_props
+    attr_accessor :tag, :css_class, :id, :url, :alt, :title, :img, :text, :data, :style, :vue_props
 
     def initialize(settings)
       @utils = Utilities.instance
       @settings = settings
       set_defaults
       build_component
-      transpose_settings %w[data style id tag url alt img text]
+      transpose_settings %w[data style id tag url alt title img text]
     end
 
     # sets component defaults
@@ -16,6 +16,7 @@ module DcUi
       @id = nil
       @url = nil
       @alt = nil
+      @title = nil
       @img = nil
       @text = nil
       @data = nil

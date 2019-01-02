@@ -137,6 +137,12 @@ describe DcUi::Component, 'custom default component abilities' do
     expect(component.alt).to include('column2')
   end
 
+  it 'allows for title to be set' do
+    settings = @utils.merge_defaults('column', title: 'title2')
+    component = DcUi::Component.new(settings)
+    expect(component.title).to include('title2')
+  end
+
   it 'allows for image to be set' do
     settings = @utils.merge_defaults('column', img: 'test.gif')
     component = DcUi::Component.new(settings)
