@@ -2,7 +2,7 @@
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
 
 
-Conquer complex UIs with beastUI. 
+Conquer complex UIs with GoodUI. 
 
 ## Benefits
 - Rapidly build complex UIs.
