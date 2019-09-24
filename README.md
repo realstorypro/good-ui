@@ -1,33 +1,29 @@
-# GoodUI
-[![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
+# GOODUI
+[![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/goodlogik/GOOD-UI)
 
 
-Conquer complex UIs with GoodUI. 
+Build rich UIs with ease by combining the powers of Ruby, Slim and Meta-programming.
 
-## Benefits
-- Rapidly build complex UIs.
-- Massive reduction in Cognitive Load
-- Cleaner(ish) Markup
-- Build a deisgn vocabulary
-- Faster front end Development
-- Rapid UI iterations
-
+## Features & Benefits
+- Clean, readable markup reduces cognitive load and speeds up development.
+- A single design vocabulary for the entire platform enforces consistency and accelerates onboarding of new developers.
+- First class integrations with Semantic UI and Vue.js
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'good_ui'
+gem 'goodui'
 ```
 
-Copy the initializer and the default markup elements.
+And run 
 
 ```bash
-rake good_ui:setup
+rake goodui:setup
 ```
 
-This copies the initializer and a markup configuration file **markup.yml**
+This copies the initializer and a markup configuration file **markup.yml** with defaults for Semantic UI.
 
 ## What it looks like
 
