@@ -1,38 +1,31 @@
-# GoodUI
-[![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
+# GOODUI
+[![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/goodlogik/GOOD-UI)
 
 
-Conquer complex UIs with GoodUI. 
+Build rich UIs with ease by combining the powers of Ruby, Slim and Meta-programming.
 
-## Benefits
-- Rapidly build complex UIs.
-- Massive reduction in Cognitive Load
-- Cleaner(ish) Markup
-- Build a deisgn vocabulary
-- Faster front end Development
-- Rapid UI iterations
-
+## Features & Benefits
+- Clean, readable markup reduces cognitive load and speeds up development.
+- A single design vocabulary for the entire platform enforces consistency and accelerates onboarding of new developers.
+- First class integrations with Semantic UI and Vue.js
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'good_ui'
+gem 'goodui'
 ```
 
-Copy the initializer and the default markup elements.
+And run 
 
 ```bash
-rake good_ui:setup
+rake goodui:setup
 ```
 
-This copies the initializer and a markup configuration file **markup.yml**
+This copies the initializer and a markup configuration file **markup.yml** with defaults for Semantic UI.
 
-## What it looks like
-
-Presented in slim for extra sexiness ..
-
+## Reads Like
 ```slim
 
 = container
@@ -48,8 +41,7 @@ Presented in slim for extra sexiness ..
 
 ## How it works
 
-The ui.yml file contains a list of ui elements such as **container** and **grid**. 
-It defines **default html tag** and **default css classes**.
+The ui.yml file contains a list of all the UI elements along with their tags and default css classes.
 
 ```yaml
 container:
@@ -58,29 +50,25 @@ container:
 grid:
   tag: div
   css_class: 'grid'
-```
 
-You can have multiple css classes assigned to a single element
-
-```yaml
 column:
   tag: div
   css_class: 'wide column'
 ```
 
-The elements can be accessed in views by calling them as a function name
+The ui elements can be accessed in views by calling them as a function
 
 ```slim
 = grid
 ```
 
-This produces 
+The will produce
 
 ```html
 <div class="ui grid"></div>
 ```
 
-Notice that **ui** class is automatically added. This behavior can be disabled by 
+Notice that the semantic-ui class **ui** class was automatically added. This behavior can be disabled by 
 setting **ui** property to false
 
 ```yaml
@@ -102,7 +90,7 @@ will now produce
 <div class="grid"></div>
 ```
 
-### Options
+### Semantic UI Integration
 
 You can specify column size
 
@@ -140,8 +128,9 @@ Will produce
 <div class="computer only wide column"></div>
 ```
 
-### Custom Elements
-Don't forget you can add your own elements. All you have to do is customize ui.yml
+### Adding Elements
+You can add your own elements by customizing ui.yml.
+
 ```yaml
 hero:
   tag: div
@@ -149,7 +138,7 @@ hero:
   ui: off
 ```
 
-calling the custom function
+calling the element function
 
 ```slim
 = hero
