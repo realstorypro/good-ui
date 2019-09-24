@@ -1,5 +1,5 @@
-DcUi.configure do |config|
+GoodUi.configure do |config|
   config.ui_file = "#{Rails.root}/config/ui.yml"
 end
 
-DcUi.boot
+GoodUi.boot

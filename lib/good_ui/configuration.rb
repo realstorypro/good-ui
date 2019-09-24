@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # handles loading and serving of the configuration files
-module DcUi
+module GoodUi
   # contains the configuration itself
   class Configuration
     attr_accessor :ui_file

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'dc_ui'
+require 'good_ui'
 require 'byebug'
 
 require 'simplecov'
@@ -25,14 +25,14 @@ RSpec.configure do |config|
 
   config.before(:each) do |test|
     unless test.metadata[:skip_boot]
-      DcUi.configure do |c|
-        c.ui_file = "#{DcUi.root}/lib/shared/ui.yml"
+      GoodUi.configure do |c|
+        c.ui_file = "#{GoodUi.root}/lib/shared/ui.yml"
       end
-      DcUi.boot
+      GoodUi.boot
     end
   end
 
   config.after(:each) do |test|
-    DcUi.configuration.ui_file = nil unless test.metadata[:skip_shutdown]
+    GoodUi.configuration.ui_file = nil unless test.metadata[:skip_shutdown]
   end
 end

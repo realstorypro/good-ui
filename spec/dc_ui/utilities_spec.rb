@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-describe DcUi::Utilities do
+describe GoodUi::Utilities do
   it 'it is a singleton class', skip_instance: true do
-    expect(DcUi::Utilities).to respond_to(:instance)
+    expect(GoodUi::Utilities).to respond_to(:instance)
   end
 end
 
-describe DcUi::Utilities, 'number to text conversion' do
+describe GoodUi::Utilities, 'number to text conversion' do
   before(:each) do
-    @utils = DcUi::Utilities.instance
+    @utils = GoodUi::Utilities.instance
   end
 
   after(:each) do
@@ -32,9 +32,9 @@ describe DcUi::Utilities, 'number to text conversion' do
   end
 end
 
-describe DcUi::Utilities, 'component building' do
+describe GoodUi::Utilities, 'component building' do
   before(:each) do
-    @utils = DcUi::Utilities.instance
+    @utils = GoodUi::Utilities.instance
   end
 
   after(:each) do
@@ -51,9 +51,9 @@ describe DcUi::Utilities, 'component building' do
 end
 
 # rubocop:disable Metrics/BlockLength
-describe DcUi::Utilities, 'merges settings' do
+describe GoodUi::Utilities, 'merges settings' do
   before(:each) do
-    @utils = DcUi::Utilities.instance
+    @utils = GoodUi::Utilities.instance
   end
 
   after(:each) do

@@ -18,13 +18,13 @@ Conquer complex UIs with GoodUI.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dc_ui'
+gem 'good_ui'
 ```
 
 Copy the initializer and the default markup elements.
 
 ```bash
-rake dc_ui:setup
+rake good_ui:setup
 ```
 
 This copies the initializer and a markup configuration file **markup.yml**

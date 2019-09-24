@@ -1,14 +1,14 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'dc_ui/version'
+require 'good_ui/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'dc_ui'
-  spec.version       = DcUi::VERSION
+  spec.name          = 'goodui'
+  spec.version       = GoodUi::VERSION
   spec.authors       = ['Leonid Medovyy']
-  spec.email         = ['support@leonid.io']
+  spec.email         = ['leonid@goodlogik.com']
 
-  spec.summary       = 'UI DSL for DC Framework'
+  spec.summary       = 'Easily manage complex UIs with Ruby and MetaProgramming'
   spec.homepage      = 'http://www.leonid.io/'
   spec.license       = 'MIT'
 

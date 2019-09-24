@@ -1,4 +1,4 @@
-module DcUi
+module GoodUi
   # responsible for the out building of the component
   class Component
     attr_accessor :tag, :css_class, :id, :url, :alt, :title, :img, :text, :data, :style, :vue_props

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-namespace :dc_ui do
+namespace :goodui do
   desc 'Copies ui.yml & initializer to application'
   task :setup do
     dcui_copy 'ui.yml', 'config/ui.yml', 'coping ui.yml'
-    dcui_copy 'initializer.rb', 'config/initializers/dc_ui.rb', 'copying initializer'
+    dcui_copy 'initializer.rb', 'config/initializers/good_ui.rb', 'copying initializer'
   end
 end
 
