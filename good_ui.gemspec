@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'good_ui/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'goodui'
+  spec.name          = 'good_ui'
   spec.version       = GoodUi::VERSION
   spec.authors       = ['Leonid Medovyy']
   spec.email         = ['leonid@goodlogik.com']

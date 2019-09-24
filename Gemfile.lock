@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    goodui (3.0.6)
+    good_ui (3.0.7)
       hashie (~> 3.5.7)
       rails (> 5.2.0)
 
@@ -183,7 +183,7 @@ DEPENDENCIES
   bundler (~> 1.16.a)
   byebug
   codecov
-  goodui!
+  good_ui!
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop (~> 0.50.0)
