@@ -2,16 +2,16 @@
 
 require 'rails'
 
-module DcUi
+module GoodUi
   # ads helper to the action view
   class Railtie < ::Rails::Railtie
-    initializer 'dc_ui.configure_view_controller' do
+    initializer 'good_ui.configure_view_controller' do
       ActiveSupport.on_load :action_view do
-        include DcUi::Helpers
+        include GoodUi::Helpers
       end
     end
 
-    railtie_name :dc_ui
+    railtie_name :good_ui
     rake_tasks do
       load 'tasks/setup.rake'
     end

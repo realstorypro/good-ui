@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module DcUi
+module GoodUi
   # Singleton with utilities used by DC-UI
   class Utilities
     include Singleton
 
     def initialize
-      @config = DcUi.configuration.ui_file
+      @config = GoodUi.configuration.ui_file
     end
 
     # Checks if the component exists inside the config file

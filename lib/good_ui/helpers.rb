@@ -1,9 +1,9 @@
-module DcUi
+module GoodUi
   # helper module that gets included into a gem
   module Helpers
     # rubocop:disable MethodLength
     def method_missing(m, *args, &block)
-      if DcUi::Utilities.instance.component_defined?(m)
+      if GoodUi::Utilities.instance.component_defined?(m)
         # giving access to m inside define_method
         define_scope_of_class = class << self; self; end
         define_scope_of_class.class_eval do
@@ -26,8 +26,8 @@ module DcUi
 
     # ui factory
     def ui(name, args = {}, &block)
-      settings = DcUi::Utilities.instance.merge_defaults(name, args)
-      component = DcUi::Component.new(settings)
+      settings = GoodUi::Utilities.instance.merge_defaults(name, args)
+      component = GoodUi::Component.new(settings)
       render_component(component, &block)
     end
 

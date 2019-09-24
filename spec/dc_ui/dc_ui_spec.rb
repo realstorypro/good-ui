@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-describe DcUi do
+describe GoodUi do
   it 'Gem has a version number' do
-    expect(DcUi::VERSION).not_to be nil
+    expect(GoodUi::VERSION).not_to be nil
   end
 end

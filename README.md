@@ -1,4 +1,4 @@
-# beastUI
+# GoodUI
 [ ![Codeship Status for leonid-io/dc-ui](https://app.codeship.com/projects/3a47e490-8794-0135-3a84-7eb6ba30fb88/status?branch=master)](https://app.codeship.com/projects/248380)
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/leonid-io/dc-ui)
 
@@ -19,13 +19,13 @@ Conquer complex UIs with beastUI.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dc_ui'
+gem 'good_ui'
 ```
 
 Copy the initializer and the default markup elements.
 
 ```bash
-rake dc_ui:setup
+rake good_ui:setup
 ```
 
 This copies the initializer and a markup configuration file **markup.yml**
