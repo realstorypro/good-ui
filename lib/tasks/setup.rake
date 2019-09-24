@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-namespace :good_ui do
+namespace :goodui do
   desc 'Copies ui.yml & initializer to application'
   task :setup do
     dcui_copy 'ui.yml', 'config/ui.yml', 'coping ui.yml'
