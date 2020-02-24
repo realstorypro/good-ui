@@ -1,6 +1,5 @@
 # 😇 GoodUi
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/goodlogik/GOOD-UI)
-
 Build rich UIs with ease by combining the powers of Ruby, Slim and Meta-programming.
 
 ## What
