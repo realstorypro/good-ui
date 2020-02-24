@@ -1,12 +1,35 @@
-# GOODUI
+# 😇 GoodUi
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/goodlogik/GOOD-UI)
-
 
 Build rich UIs with ease by combining the powers of Ruby, Slim and Meta-programming.
 
-## Features & Benefits
-- Clean, readable markup reduces cognitive load and speeds up development.
-- A single design vocabulary for the entire platform enforces consistency and accelerates onboarding of new developers.
+## What
+```slim
+
+= container 'fluid'
+  = grid 'celled'
+     = row
+      = column size: 16
+        = segment 'inverted'
+          = h2 'inverted'
+            = icon 'checkmark'
+            | Its easy
+    = row
+      = column computer: 8, tablet: 10, mobile: 16
+        = segment 'green'
+          p first paragraph
+    = row
+      = column size: 16, only: :computer
+        = segment 'secondary'
+          = h1, class: 'dividing', text: 'Big Header'
+          p second paragraph
+```
+
+## Why
+- Because clean and redable code reduces cognitire load and speeds up development.
+- Unlike css classes, misspelled functions throw errors, drastically reducing the debug time.
+
+## Also
 - First class integrations with Semantic UI and Vue.js
 
 ## Installation
