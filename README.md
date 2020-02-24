@@ -1,31 +1,36 @@
 # 😇 GoodUi
 [![codecov](https://codecov.io/gh/leonid-io/dc-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/goodlogik/GOOD-UI)
+
 Build rich UIs with ease by combining the powers of Ruby, Slim and Meta-programming.
 
 ## What
 ```slim
 
-= container 'fluid'
-  = grid 'celled'
-     = row
+= container
+  = grid
+    = row
       = column size: 16
-        = segment 'inverted'
-          = h2 'inverted'
-            = icon 'checkmark'
-            | Its easy
+        = segment
+          = h2 text: "Its' easy!"
+
     = row
       = column computer: 8, tablet: 10, mobile: 16
-        = segment 'green'
-          p first paragraph
+        = h1 text: 'Left Column'
+        | Left Column
+
+      = column computer: 8, tablet: 10, mobile: 16
+        = h1 text: 'Left Column
+        | Right Column
+
+
     = row
       = column size: 16, only: :computer
         = segment 'secondary'
-          = h1, class: 'dividing', text: 'Big Header'
-          p second paragraph
+          = h1 text: 'Computer Only'
 ```
 
 ## Why
-- Because clean and redable code reduces cognitire load and speeds up development.
+- Because clean and redable code reduces cognitive load and speeds up development.
 - Unlike css classes, misspelled functions throw errors, drastically reducing the debug time.
 
 ## Also
