@@ -180,7 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.16.a)
+  bundler
   byebug
   codecov
   good_ui!
@@ -189,4 +189,4 @@ DEPENDENCIES
   rubocop (~> 0.50.0)
 
 BUNDLED WITH
-   1.17.2
+   2.1.4
