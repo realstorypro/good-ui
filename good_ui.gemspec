@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'hashie', '~> 3.5.7'
   spec.add_dependency 'rails', '> 5.2.0'
 
-  spec.add_development_dependency 'bundler', '~> 1.16.a'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
