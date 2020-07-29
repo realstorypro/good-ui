@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'good_ui'
   spec.version       = GoodUi::VERSION
   spec.authors       = ['Leonid Medovyy']
-  spec.email         = ['leonid@goodlogik.com']
+  spec.email         = ['leonid@publishpro.com']
 
   spec.summary       = 'Easily manage complex UIs with Ruby and MetaProgramming'
-  spec.homepage      = 'http://www.leonid.io/'
+  spec.homepage      = 'http://www.publishpro.com/'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,6 +33,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'byebug'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 12.3.3'
   spec.add_development_dependency 'rspec', '~> 3.0'
 end
